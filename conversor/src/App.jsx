@@ -7,9 +7,9 @@ import './App.css'
 
 function App() {
   const [value, setValue] = useState(0)
-  const [magnitud, setMagnitud] = useState("angle")
-  const [from, setFrom] = useState("deg")
-  const [to, setTo] = useState("rad")
+  const [magnitud, setMagnitud] = useState("")
+  const [from, setFrom] = useState(" ")
+  const [to, setTo] = useState(" ")
   
     const convert = configureMeasurements(allMeasures);
     const magnitudes = convert().measures()
