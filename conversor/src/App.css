@@ -1,0 +1,130 @@
+#root > div {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: min(100% - 40px, 620px);
+  margin: auto;
+  padding: clamp(28px, 7vw, 56px);
+  border: 1px solid #262a44;
+  border-radius: 28px;
+  background: rgba(19, 22, 40, 0.92);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  text-align: left;
+}
+
+#root > div::before {
+  order: -2;
+  color: #8b85ff;
+  content: "CONVERSIONES RÁPIDAS Y SENCILLAS";
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+}
+
+h1 {
+  order: -1;
+  margin: 0 0 6px;
+  color: #f1f2ff;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 750;
+  letter-spacing: -0.05em;
+  line-height: 1.1;
+}
+
+select,
+input[type="number"] {
+  width: 100%;
+  min-width: 0;
+  min-height: 56px;
+  padding: 0 16px;
+  border: 1px solid #2d3252;
+  border-radius: 14px;
+  outline: none;
+  background: #0f1224;
+  color: #e6e8ff;
+  font: inherit;
+  font-size: 1rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+select {
+  cursor: pointer;
+}
+
+select:focus,
+input[type="number"]:focus {
+  border-color: #7c75f0;
+  box-shadow: 0 0 0 4px rgba(124, 117, 240, 0.2);
+}
+
+/* Selectores de unidades, uno al lado del otro */
+#root > div > div {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+#root > div > div > select {
+  flex: 1 1 0;
+}
+
+/* Botón intercambiar: el texto se oculta y se muestra un ícono */
+#root > div > div > button {
+  flex: 0 0 56px;
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  min-height: 56px;
+  padding: 0;
+  border: 1px solid #3a3f6b;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #3b3796, #5a52d9);
+  color: #fff;
+  font-size: 0;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(90, 82, 217, 0.35);
+  transition: transform 200ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+#root > div > div > button::before {
+  content: "⇄";
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+#root > div > div > button:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 8px 22px rgba(90, 82, 217, 0.5);
+}
+
+#root > div > div > button:active {
+  transform: scale(0.94);
+}
+
+#root > div > div > button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(124, 117, 240, 0.35);
+}
+
+#root > div > p {
+  margin-top: 4px;
+  padding: 20px;
+  overflow-wrap: anywhere;
+  border: 1px solid #2f2e66;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1c1b3f, #15162e);
+  color: #a9a5ff;
+  font-size: 1.08rem;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
